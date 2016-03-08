@@ -17,7 +17,7 @@ int mystrstr(char* haystack, char* needle){
     
     int haystackLen = strlen(haystack);
     int needleLen = strlen(needle);
-    
+
     for (int i = 0; i < haystackLen; i++){
         if (haystack[i] == needle[0]){
             int k = i;
@@ -45,3 +45,22 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+/*
+ANUP:
+1. declaration inside for loop makes code incompatible.
+It will work only for C99 and breaks in other. So, I dont use that.
+
+2. You have used 6 variables in that function. You can do it with 2 variables as below:
+int mystrstr(const char* s, const char* p){
+        int i,j;
+
+        for(i=0; s[i] != '\0'; i++){
+                for(j=0; p[j] == s[i] && p[j] != '\0'; j++, i++);
+
+                if(p[j] == '\0')
+                        return (i-j);
+        }
+        return -1;
+}
+*/
