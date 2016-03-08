@@ -104,9 +104,6 @@ void inorderTraversal(struct Node * root){
 }
 
 int findLeastCommonAncester(struct Node* node1, struct Node* node2){
-    printf("Node 1 = %d\n", node1->val);
-    printf("Node 2 = %d\n", node2->val);
-    
     struct Node * node1Temp = node1;
     struct Node * node2Temp = node2;
     
@@ -132,8 +129,48 @@ int main(int argc, const char * argv[]) {
     inorderTraversal(root);
     printf("\n");
     
-    int lca = findLeastCommonAncester(root->left->left->left, root->right->right);
-    printf ("Least Common ancestor = %d\n", lca);
-    
+    int lca = findLeastCommonAncester(root->left->left->left, root->left->right);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    lca = findLeastCommonAncester(root->left->left->left, root->right->right);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    lca = findLeastCommonAncester(root->left->left->left, NULL);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    lca = findLeastCommonAncester(root->left->left->left, root);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    struct Node * newNode = createNode(50);
+    lca = findLeastCommonAncester(root->left->left->left, newNode);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    lca = findLeastCommonAncester(NULL, NULL);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
+    lca = findLeastCommonAncester(root, root);
+    if (lca != -1)
+        printf ("Least Common ancestor = %d\n", lca);
+    else
+        printf ("Either one of the nodes is NULL or nodes are from different trees\n");
+
     return 0;
 }
