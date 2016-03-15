@@ -17,9 +17,8 @@ class Node:
 
 	def __init__ (self, val):
 		self.val = val
-		left = None
-		right = None
-		parent = None
+		self.left = None
+		self.right = None
 
 def createTreeAsAbove():
 	root = Node(9)
@@ -54,16 +53,16 @@ def height(root):
 def printLevelOrder(root, height):
 	if root is None:
 		return
-	elif height == 1:
+	elif height == 0:
 		print root.val
-	elif height > 1:
+	elif height > 0:
 		printLevelOrder(root.left, height-1)
 		printLevelOrder(root.right, height-1)
 
 def levelOrderTraversal(root):
 	h = height(root)
 
-	for i in range(1, h+1):
+	for i in range(h):
 		printLevelOrder(root, i)
 
 def main():
