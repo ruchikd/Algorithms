@@ -21,6 +21,7 @@ def returnNthFiboNum(val):
 
 def main():
 	printFibonacci(0, 1, 16)
+	print ""
 	print returnNthFiboNum(15)
 
 if __name__ == '__main__':
