@@ -82,31 +82,31 @@ def main():
 	if lca == None:
 		print "Either nodes are from different trees or either one of the nodes are None"
 	else:
-		print lca, " is least common ancestor"
+		print lca, " is least common ancestor of ", root.left.left.left.val, "and", root.left.right.left.val
 
 	lca = findLeastCommonAncestor(root.left.left.left, newNode)
 	if lca == None:
 		print "Either nodes are from different trees or either one of the nodes are None"
 	else:
-		print lca, " is least common ancestor"
+		print lca, " is least common ancestor", root.left.left.left.val, "and", newNode.val
 
 	lca = findLeastCommonAncestor(root.left.left.left, root)
 	if lca == None:
 		print "Either nodes are from different trees or either one of the nodes are None"
 	else:
-		print lca, " is least common ancestor"
+		print lca, " is least common ancestor", root.left.left.left.val, "and", root.val
 
 	lca = findLeastCommonAncestor(root, root)
 	if lca == None:
 		print "Either nodes are from different trees or either one of the nodes are None"
 	else:
-		print lca, " is least common ancestor"
+		print lca, " is least common ancestor", root.val, "and", root.val
 
 	lca = findLeastCommonAncestor(root, None)
 	if lca == None:
 		print "Either nodes are from different trees or either one of the nodes are None"
 	else:
-		print lca, " is least common ancestor"
+		print lca, " is least common ancestor", root.val, "and", None
 
 if __name__ == '__main__':
 	main()

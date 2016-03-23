@@ -1,6 +1,6 @@
 
 #This is a string which has some value
-str = 'abbaccaccabba'
+str = 'abbacccacccabba'
 
 """
 Below is the way how I find out if the string is a plaindrom

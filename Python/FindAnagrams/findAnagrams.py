@@ -25,4 +25,4 @@ def main():
 		print arr[dupArray[i].index]
 
 if __name__ == '__main__':
-	main()
+	main()e
