@@ -16,10 +16,15 @@ class Stack:
 				break
 
 	def peek(self, stackNum):
+		isEmpty = 0
 		for x in reversed(xrange(len(self.arr))):
 			if self.arr[x][1] == stackNum:
+				isEmpty = 1
 				print self.arr[x][0]
 				break
+
+		if isEmpty == 0:
+			print "Stack Number", stackNum, "is empty"
 
 def main():
 	s = Stack(3)
@@ -41,8 +46,11 @@ def main():
 
 	s.pop(3)
 	s.pop(1)
+	s.pop(3)
+	s.pop(3)
 	s.pop(1)
 	s.pop(1)
+	s.push(3, 14)
 
 	s.peek(1)
 	s.peek(2)
