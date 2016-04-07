@@ -13,29 +13,34 @@ def removeElements(head, val):
 	if head is None:
 		return
 
-	while True:
-		if head.val == val:
-			head = head.next
-		else:
+	while head != None:
+		if head.val != val:
 			break
-		if head is None:
-			break
+		temp = head
+		head = head.next
+		del temp
+
+	if head == None:
+		return
+
 	node = head
 
-	while True:
-		if node == None:
-			break
-		if node.next == None:
-			break
+	while node.next != None:
 		if node.next.val == val:
+			temp = node.next
 			node.next = node.next.next
-			node = node.next.next
-			if node == None:
-				break
+			del temp
 		else:
 			node = node.next
 
+	printList(head)
+	i = 10
+	update(i)
+	print i
 	return head
+
+def update(i):
+	i = 5
 
 def main():
 	head = ListNode(1)
@@ -47,8 +52,7 @@ def main():
 	head.next.next.next.next.next.next = ListNode(2)
 	head.next.next.next.next.next.next.next = ListNode(8)
 
-	removeElements(head, 2)
-	printList(head)
+	removeElements(head, 1)
 
 if __name__ == '__main__':
 	main()
