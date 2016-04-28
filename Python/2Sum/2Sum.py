@@ -13,8 +13,6 @@ def find2Sum(arr, target):
 			smallList.append(x)
 			sumList.append(smallList)
 		else:
-			print "target =", target, "arr[",x,"] =", arr[x]
-			print "adding target - arr[x] =", target - arr[x], "in dict"
 			d[target - arr[x]] = x
 
 	print sumList
