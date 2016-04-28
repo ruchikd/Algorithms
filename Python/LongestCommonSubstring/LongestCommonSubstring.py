@@ -29,7 +29,7 @@ def longest_common_substring(s1, s2):
     '''
 
 def main():
-    print longest_common_substring("bcbcaba", "bcbcbcbca")
+    print longest_common_substring("bcbcdabcbd", "bcbcbcbca")
 
 if __name__ == '__main__':
     main()
